@@ -18,6 +18,9 @@ public class Knight extends Piece{
     // Find minimum number of steps taken by the knight
     // from source to reach destination using Breadth-First-Search (BFS)
     public static int BFS(Node src, Node dest, int width, int height) {
+        if (!valid(src.getX(), src.getY(), width, height) || !valid(dest.getX(), dest.getY(), width, height))
+            return -1;
+
         // map to check if matrix cell is visited before or not
         Map<Node, Boolean> visited = new HashMap<>();
 

@@ -1,8 +1,10 @@
 package ru.fix.knightstepcounter.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class Node {
     // (x, y) represents chess board coordinates
     // dist represent its minimum distance from the source
@@ -11,11 +13,5 @@ public class Node {
     public Node(int x, int y) {
         this.x = x;
         this.y = y;
-    }
-
-    public Node(int x, int y, int dist) {
-        this.x = x;
-        this.y = y;
-        this.dist = dist;
     }
 }

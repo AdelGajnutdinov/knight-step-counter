@@ -2,12 +2,10 @@ package ru.fix.knightstepcounter.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.fix.knightstepcounter.forms.CounterForm;
 import ru.fix.knightstepcounter.models.Result;
 import ru.fix.knightstepcounter.services.StepCountService;
-import ru.fix.knightstepcounter.services.StepCountServiceImpl;
 
 @RestController
 public class StepCountController {
@@ -15,12 +13,10 @@ public class StepCountController {
     private StepCountService stepCountService;
 
     @GetMapping("/hourse/rest/count")
-    public Result getStepCount(CounterForm counterForm) {
-        return stepCountService.getStepCount(counterForm);
-    }
-
-    @GetMapping("/hourse/rest")
-    public String getHello() {
-        return "hello";
+    public Result getStepCount(@RequestParam("start") String start,
+                               @RequestParam("end") String end,
+                               @RequestParam("width") int width,
+                               @RequestParam("height") int height) {
+        return stepCountService.getStepCount(start, end, width, height);
     }
 }
