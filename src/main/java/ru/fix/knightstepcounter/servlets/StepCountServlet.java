@@ -21,19 +21,31 @@ public class StepCountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String start = req.getParameter("start");
         String end = req.getParameter("end");
-        Integer width;
-        Integer height;
+        String widthString = req.getParameter("width");
+        String heightString = req.getParameter("height");
 
-        if (start == null || end == null || start.isEmpty() || end.isEmpty()) {
+        // check if a parameter is missing
+        if (start == null || end == null || widthString == null || heightString == null) {
             resp.getWriter().println("Some of required parameters are missing!");
             resp.getWriter().println("\nRequest example:");
-            resp.getWriter().println("/hourse/servlet/count?width=10&height=14&start=6&end=A3");
+            resp.getWriter().println("/hourse/servlet/count?width=10&height=14&start=B1&end=A3");
             return;
         }
+        // check if 'start' or 'end' parameter has wrong format
         if (start.length() != 2 || end.length() != 2) {
             resp.getWriter().println("Wrong format of 'start' or 'end' parameters! Example: start=A4");
             return;
         }
+        // check if 'start' or 'end' parameter has wrong format
+        if (!Character.isUpperCase(start.charAt(0)) ||
+                !Character.isUpperCase(end.charAt(0)) ||
+                !Character.isDigit(end.charAt(1)) ||
+                !Character.isDigit(end.charAt(1))) {
+            resp.getWriter().println("Wrong format of 'start' or 'end' parameters! Example: start=A4");
+            return;
+        }
+        int width;
+        int height;
         try {
             width = Integer.parseInt(req.getParameter("width"));
             height = Integer.parseInt(req.getParameter("height"));

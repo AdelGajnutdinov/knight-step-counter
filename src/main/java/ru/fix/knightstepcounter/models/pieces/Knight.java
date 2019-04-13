@@ -16,7 +16,8 @@ public class Knight extends Piece{
     private static int col[] = {-1, 1, 1, -1, 2, -2, 2, -2};
 
     // Find minimum number of steps taken by the knight
-    // from source to reach destination using Breadth-First-Search (BFS)
+    // from source to reach destination on free chessboard
+    // using Breadth-First-Search (BFS)
     public static int BFS(Node src, Node dest, int width, int height) {
         if (!valid(src.getX(), src.getY(), width, height) || !valid(dest.getX(), dest.getY(), width, height))
             return -1;
