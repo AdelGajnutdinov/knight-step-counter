@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/hourse/servlet/count")
+@WebServlet("/horse/servlet/count")
 public class StepCountServlet extends HttpServlet {
 
     @Autowired
@@ -28,7 +28,7 @@ public class StepCountServlet extends HttpServlet {
         if (start == null || end == null || widthString == null || heightString == null) {
             resp.getWriter().println("Some of required parameters are missing!");
             resp.getWriter().println("\nRequest example:");
-            resp.getWriter().println("/hourse/servlet/count?width=10&height=14&start=B1&end=A3");
+            resp.getWriter().println("/horse/servlet/count?width=10&height=14&start=B1&end=A3");
             return;
         }
         // check if 'start' or 'end' parameter has wrong format

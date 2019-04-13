@@ -14,7 +14,7 @@ public class StepCountController {
     @Autowired
     private StepCountService stepCountService;
 
-    @GetMapping("/hourse/rest/count")
+    @GetMapping("/horse/rest/count")
     public Result getStepCount(@RequestParam("start") String start,
                                                @RequestParam("end") String end,
                                                @RequestParam("width") int width,

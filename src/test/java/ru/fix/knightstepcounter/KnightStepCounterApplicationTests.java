@@ -36,7 +36,7 @@ public class KnightStepCounterApplicationTests {
     // rest test with good parameters
     @Test
     public void getResultWithGoodParametersFromRest() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=B1&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=B1&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -52,7 +52,7 @@ public class KnightStepCounterApplicationTests {
     // rest test with knight position out of chessboard
     @Test
     public void getResultWithBadWidthParameterFromRest() throws Exception {
-        String url = "/hourse/rest/count/?width=1&height=14&start=B1&end=A3";
+        String url = "/horse/rest/count/?width=1&height=14&start=B1&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -68,7 +68,7 @@ public class KnightStepCounterApplicationTests {
     // rest test with wrong format of 'start' parameter
     @Test
     public void getResultWithNotFullStartParameterFromRest() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=x&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=x&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -79,7 +79,7 @@ public class KnightStepCounterApplicationTests {
     // rest test with wrong format of 'start' parameter
     @Test
     public void getResultWithBadStartParameterFromRest() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=1x&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=1x&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -90,7 +90,7 @@ public class KnightStepCounterApplicationTests {
     // rest test without required parameter
     @Test
     public void getResultWithOutStartParameterFromRest() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -101,7 +101,7 @@ public class KnightStepCounterApplicationTests {
     // servlet test with good parameters
     @Test
     public void getResultWithGoodParametersFromServlet() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=B1&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=B1&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -117,7 +117,7 @@ public class KnightStepCounterApplicationTests {
     // servlet test with knight position out of chessboard
     @Test
     public void getResultWithBadWidthParameterFromServlet() throws Exception {
-        String url = "/hourse/rest/count/?width=1&height=14&start=B1&end=A3";
+        String url = "/horse/rest/count/?width=1&height=14&start=B1&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -133,7 +133,7 @@ public class KnightStepCounterApplicationTests {
     // servlet test with wrong format of 'start' parameter
     @Test
     public void getResultWithNotFullStartParameterFromServlet() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=x&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=x&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -144,7 +144,7 @@ public class KnightStepCounterApplicationTests {
     // servlet test with wrong format of 'start' parameter
     @Test
     public void getResultWithBadStartParameterFromServlet() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&start=1x&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&start=1x&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
@@ -155,7 +155,7 @@ public class KnightStepCounterApplicationTests {
     // servlet test without required parameter
     @Test
     public void getResultWithOutStartParameterFromServlet() throws Exception {
-        String url = "/hourse/rest/count/?width=10&height=14&end=A3";
+        String url = "/horse/rest/count/?width=10&height=14&end=A3";
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(url)
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
 
